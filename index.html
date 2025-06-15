@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Modern E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="#" onclick="openFullscreen(); return false;">
+                <img src="shopeasy.png" alt="ShopEasy Logo" class="logo">
+            </a>
+            <h1>ShopEasy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="cartLink">Cart (<span id="cartCount">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="shop">
+            <h2>Shop</h2>
+            <div class="category-filter">
+                <label for="categorySelect">
+                    <i class="fas fa-filter"></i> Category:
+                </label>
+                <select id="categorySelect">
+                    <option value="all">All</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="children">Children</option>
+                </select>
+                <div class="category-icons">
+                    <span title="Male"><i class="fas fa-male"></i></span>
+                    <span title="Female"><i class="fas fa-female"></i></span>
+                    <span title="Children"><i class="fas fa-chid"></i></span>
+                </div>
+            </div>
+            <div><h4 style="text-align: center;">----Imgaes are for Example and Education only----</h4></div>
+            <div id="products">
+                </div>
+
+        </section>
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>Welcome to ShopEasy, your one-stop destination for quality products. We are committed to providing excellent customer service and a seamless shopping experience.</p>
+        </section>
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us!</p>
+            <div class="contact-info">
+                <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://yourwebsite.com" target="_blank"><i class="fas fa-globe"></i> Website</a>
+                <a href="mailto:youremail@gmail.com"><i class="fas fa-envelope"></i> Gmail</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 ShopEasy. All rights reserved.</p>
+    </footer>
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <p>Total: <span id="cartTotal">0</span></p>
+            <button id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function openFullscreen() {
+            const logo = document.querySelector('.logo');
+            if (logo.requestFullscreen) {
+                logo.requestFullscreen();
+            } else if (logo.webkitRequestFullscreen) { /* Safari */
+                logo.webkitRequestFullscreen();
+            } else if (logo.msRequestFullscreen) { /* IE11 */
+                logo.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
